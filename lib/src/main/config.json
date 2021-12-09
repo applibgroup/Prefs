@@ -1,0 +1,25 @@
+{
+  "app": {
+    "bundleName": "es.dmoral.prefs",
+    "vendor": "dmoral",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {
+  },
+  "module": {
+    "package": "es.dmoral.prefs",
+    "deviceType": [
+      "phone",
+      "tablet",
+      "tv"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "lib",
+      "moduleType": "har"
+    }
+  }
+}

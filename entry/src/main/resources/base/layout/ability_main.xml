@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.huawei.com/res/ohos "
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:id="$+id:scrollview"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:layout_alignment="horizontal_center">
+
+<DirectionalLayout
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.huawei.com/res/ohos "
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:width="match_parent"
+    ohos:height="match_content"
+    ohos:top_margin="10vp"
+    ohos:orientation="vertical">
+
+    <Text
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:layout_alignment="horizontal_center"
+        ohos:text="$string:save_text"
+        ohos:multiple_lines="true"
+        ohos:left_margin="10vp"
+        ohos:right_margin="10vp"
+        ohos:text_size="25fp"/>
+
+    <DirectionalLayout
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:top_margin="20vp"
+        ohos:orientation="horizontal">
+
+        <TextField
+            ohos:id="$+id:et_text"
+            ohos:height="match_parent"
+            ohos:width="200vp"
+            ohos:multiple_lines="false"
+            ohos:hint="$string:hint_text"
+            ohos:padding="20vp"
+            ohos:text_size="16fp"
+            ohos:left_margin="20vp"
+            ohos:background_element="$graphic:background_element_text"
+            ohos:text_input_type="pattern_text"/>
+
+        <Button
+            ohos:id="$+id:bt_save_text"
+            ohos:width="80vp"
+            ohos:height="match_parent"
+            ohos:padding="20vp"
+            ohos:text_size="16fp"
+            ohos:top_margin="10vp"
+            ohos:left_margin="5vp"
+            ohos:background_element="$graphic:background_element_btn"
+            ohos:text="$string:save"
+            ohos:text_alignment="left"/>
+    </DirectionalLayout>
+
+    <DirectionalLayout
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:top_margin="20vp"
+        ohos:orientation="horizontal">
+
+        <TextField
+            ohos:id="$+id:et_number"
+            ohos:height="match_parent"
+            ohos:width="200vp"
+            ohos:background_element="$graphic:background_element_text"
+            ohos:multiple_lines="false"
+            ohos:left_margin="20vp"
+            ohos:hint="$string:hint_double"
+            ohos:padding="20vp"
+            ohos:text_size="16fp"
+            ohos:text_input_type="pattern_number"/>
+
+        <Button
+            ohos:id="$+id:bt_save_number"
+            ohos:width="80vp"
+            ohos:height="match_parent"
+            ohos:padding="20vp"
+            ohos:text_size="16fp"
+            ohos:left_margin="5vp"
+            ohos:background_element="$graphic:background_element_btn"
+            ohos:text="$string:save"
+            ohos:text_alignment="left"/>
+    </DirectionalLayout>
+
+
+    <DirectionalLayout
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:top_margin="20vp"
+        ohos:orientation="horizontal">
+
+        <TextField
+            ohos:id="$+id:et_number_int"
+            ohos:height="match_parent"
+            ohos:width="200vp"
+            ohos:background_element="$graphic:background_element_text"
+            ohos:multiple_lines="false"
+            ohos:left_margin="20vp"
+            ohos:hint="$string:hint_int"
+            ohos:padding="20vp"
+            ohos:text_size="16fp"
+            ohos:text_input_type="pattern_number"/>
+
+        <Button
+            ohos:id="$+id:bt_save_number_int"
+            ohos:width="80vp"
+            ohos:height="match_parent"
+            ohos:padding="20vp"
+            ohos:text_size="16fp"
+            ohos:left_margin="5vp"
+            ohos:background_element="$graphic:background_element_btn"
+            ohos:text="$string:save"
+            ohos:text_alignment="left"/>
+    </DirectionalLayout>
+    <!-- Long -->
+    <DirectionalLayout
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:top_margin="20vp"
+        ohos:orientation="horizontal">
+
+        <TextField
+            ohos:id="$+id:et_number_long"
+            ohos:height="match_parent"
+            ohos:width="200vp"
+            ohos:background_element="$graphic:background_element_text"
+            ohos:multiple_lines="false"
+            ohos:left_margin="20vp"
+            ohos:hint="$string:hint_long"
+            ohos:padding="20vp"
+            ohos:text_size="16fp"
+            ohos:text_input_type="pattern_number"/>
+
+        <Button
+            ohos:id="$+id:bt_save_number_long"
+            ohos:width="80vp"
+            ohos:height="match_parent"
+            ohos:padding="20vp"
+            ohos:text_size="16fp"
+            ohos:left_margin="5vp"
+            ohos:background_element="$graphic:background_element_btn"
+            ohos:text="$string:save"
+            ohos:text_alignment="left"/>
+    </DirectionalLayout>
+
+    <!--Float -->
+
+    <DirectionalLayout
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:top_margin="20vp"
+        ohos:orientation="horizontal">
+
+        <TextField
+            ohos:id="$+id:et_number_float"
+            ohos:height="match_parent"
+            ohos:width="200vp"
+            ohos:background_element="$graphic:background_element_text"
+            ohos:multiple_lines="false"
+            ohos:left_margin="20vp"
+            ohos:hint="$string:hint_float"
+            ohos:padding="20vp"
+            ohos:text_size="16fp"
+            ohos:text_input_type="pattern_number"/>
+
+        <Button
+            ohos:id="$+id:bt_save_number_float"
+            ohos:width="80vp"
+            ohos:height="match_parent"
+            ohos:padding="20vp"
+            ohos:text_size="16fp"
+            ohos:left_margin="5vp"
+            ohos:background_element="$graphic:background_element_btn"
+            ohos:text="$string:save"
+            ohos:text_alignment="left"/>
+    </DirectionalLayout>
+
+    <!--String sets-->
+    <DirectionalLayout
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:top_margin="20vp"
+        ohos:orientation="horizontal">
+
+        <TextField
+            ohos:id="$+id:et_stringset"
+            ohos:height="match_parent"
+            ohos:width="200vp"
+            ohos:background_element="$graphic:background_element_text"
+            ohos:multiple_lines="false"
+            ohos:left_margin="20vp"
+            ohos:hint="$string:hint_stringset"
+            ohos:padding="20vp"
+            ohos:text_size="16fp"
+            ohos:text_input_type="pattern_number"/>
+
+        <Button
+            ohos:id="$+id:bt_save_stringset"
+            ohos:width="80vp"
+            ohos:height="match_parent"
+            ohos:padding="20vp"
+            ohos:text_size="16fp"
+            ohos:left_margin="5vp"
+            ohos:background_element="$graphic:background_element_btn"
+            ohos:text="$string:save"
+            ohos:text_alignment="left"/>
+    </DirectionalLayout>
+
+    <!-- Boolean -->
+    <Switch
+        ohos:id="$+id:switch1"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:text="Switch"
+        ohos:text_size="20fp"
+        ohos:left_margin="20vp"
+        ohos:top_margin="20vp"
+        ohos:bottom_margin="20vp"
+
+        />
+    <DirectionalLayout
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:top_margin="20vp"
+        ohos:orientation="horizontal">
+        <Button
+            ohos:id="$+id:bt_force_close"
+            ohos:width="100vp"
+            ohos:height="match_parent"
+            ohos:text_size="20fp"
+            ohos:padding="20vp"
+            ohos:top_margin="10vp"
+            ohos:left_margin="20vp"
+            ohos:background_element="$graphic:background_element_btn"
+            ohos:text="$string:force_close"
+            ohos:text_alignment="left"/>
+
+        <Button
+            ohos:id="$+id:bt_clear"
+            ohos:width="100vp"
+            ohos:height="match_parent"
+            ohos:text_size="20fp"
+            ohos:padding="20vp"
+            ohos:top_margin="10vp"
+            ohos:left_margin="20vp"
+            ohos:background_element="$graphic:background_element_btn"
+            ohos:text="$string:clear"
+            ohos:text_alignment="left"/>
+
+    </DirectionalLayout>
+
+
+    <Text
+        ohos:id="$+id:tv_saved_text"
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:text_size="20fp"
+        ohos:left_margin="20vp"
+        ohos:bottom_margin="20vp"
+        ohos:multiple_lines="true"
+        ohos:top_margin="20vp"
+        ohos:text="$string:saved_text"
+        ohos:text_alignment="horizontal_center"/>
+
+    <Text
+        ohos:id="$+id:tv_saved_number"
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:text_size="20fp"
+        ohos:bottom_margin="20vp"
+        ohos:multiple_lines="true"
+        ohos:text="$string:saved_number"
+        ohos:left_margin="20vp"
+        ohos:text_alignment="horizontal_center"/>
+
+
+    <Text
+        ohos:id="$+id:tv_saved_number_int"
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:text_size="20fp"
+        ohos:bottom_margin="20vp"
+        ohos:multiple_lines="true"
+        ohos:text="$string:saved_number_int"
+        ohos:left_margin="20vp"
+        ohos:text_alignment="horizontal_center"/>
+    <Text
+        ohos:id="$+id:tv_saved_number_long"
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:text_size="20fp"
+        ohos:bottom_margin="20vp"
+        ohos:multiple_lines="true"
+        ohos:text="$string:saved_number_long"
+        ohos:left_margin="20vp"
+        ohos:text_alignment="horizontal_center"/>
+
+
+    <Text
+        ohos:id="$+id:tv_saved_number_float"
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:text_size="20fp"
+        ohos:bottom_margin="20vp"
+        ohos:multiple_lines="true"
+        ohos:text="$string:saved_number_float"
+        ohos:left_margin="20vp"
+        ohos:text_alignment="horizontal_center"/>
+
+
+    <Text
+        ohos:id="$+id:tv_saved_string_set"
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:text_size="20fp"
+        ohos:bottom_margin="20vp"
+        ohos:multiple_lines="true"
+        ohos:text="$string:saved_string_set"
+        ohos:left_margin="20vp"
+        ohos:text_alignment="horizontal_center"/>
+
+
+</DirectionalLayout>
+</ScrollView>
