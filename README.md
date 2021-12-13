@@ -6,7 +6,7 @@
 
 ## Introduction
 
-A small library containing a wrapper/helper for the Preferences of openharmony.
+A small library containing a wrapper/helper for the Preferences of openharmony .
 <p>
 	<img src="screenshot1.png" width = 320 height = 512/>
 </p>
