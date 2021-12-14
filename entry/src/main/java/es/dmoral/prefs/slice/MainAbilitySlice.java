@@ -61,7 +61,8 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
 
     private Text tv_saved_text, tv_saved_number , tv_saved_number_int ,tv_saved_number_long,tv_saved_number_float , tv_saved_stringset;
 
-
+    String SAVED="SAVED";
+    String Try_save="please enter a valid number";
 
     @Override
     public void onStart(Intent intent) {
@@ -248,19 +249,16 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
         switch (component.getId()) {
             case ResourceTable.Id_bt_save_text:
                 String text = et_text.getText();
-                if (!TextUtils.isEmpty(text)) {
-                    // one liner to save the String.
-                    HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", Prefs.contains("key_order_string_set")));
                     try {
+                        if (TextUtils.isEmpty(text)) throw new IllegalArgumentException();
+                        HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", Prefs.contains("key_order_string_set")));
                         Prefs.write(SAVED_TEXT, text);
                         updateText(text);
-                        showToast("Saved");
+                        showToast(SAVED);
                     } catch(IllegalArgumentException e) {
                         HiLog.error(LABEL_LOG, String.format(Locale.ROOT, "%s", e.getMessage()));
+                        showToast(" please enter a valid string ");
                     }
-                } else {
-                    showToast("trying to save a text with lenght 0");
-                }
                 break;
 
 
@@ -268,79 +266,66 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
             case ResourceTable.Id_bt_save_number:
                 HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", et_number.getText()));
                 text = et_number.getText();
-                if (!TextUtils.isEmpty(text)) {
-                    try {
+
+
                         double d = Double.parseDouble(text);
                         Prefs.writeDouble(SAVED_NUMBER, d);
                         updateNumber(d, false);
-                        showToast("Saved");
-                    } catch(IllegalArgumentException e) {
-                        HiLog.error(LABEL_LOG, String.format(Locale.ROOT, "%s", e.getMessage()));
-                    }
-                } else {
-                    showToast("trying to save a number with lenght 0");
-                }
+                        showToast(SAVED);
+
+
                 break;
 
 
 
             case ResourceTable.Id_bt_save_number_int:
                 HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", et_number.getText()));
-                text = et_number_int.getText();//here is the error
-                if (!TextUtils.isEmpty(text)) {
-                    try {
+                text = et_number_int.getText();
+
                         int i = Integer.parseInt(text);
                         Prefs.writeInt(SAVED_NUMBER_INT, i);
                         updateNumber(i, false);
-                        showToast("Saved");
-                    } catch(IllegalArgumentException e) {
-                        HiLog.error(LABEL_LOG, String.format(Locale.ROOT, "%s", e.getMessage()));
-                    }
-                } else {
-                    showToast("trying to save a number with lenght 0");
-                }
+                        showToast(SAVED);
+
                 break;
 
             case ResourceTable.Id_bt_save_number_long:
                 HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", et_number.getText()));
-                text = et_number_long.getText();//here is the error
-                if (!TextUtils.isEmpty(text)) {
+                text = et_number_long.getText();
+
                     try {
                         long l = Long.parseLong(text);
                         Prefs.writeLong(SAVED_NUMBER_LONG, l);
                         updateNumber(l, false);
-                        showToast("Saved");
+                        showToast(SAVED);
                     } catch(IllegalArgumentException e) {
                         HiLog.error(LABEL_LOG, String.format(Locale.ROOT, "%s", e.getMessage()));
+                        showToast(Try_save);
                     }
-                } else {
-                    showToast("trying to save a number with lenght 0");
-                }
                 break;
 
 
             case ResourceTable.Id_bt_save_number_float:
                 HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", et_number.getText()));
-                text = et_number_float.getText();//here is the error
-                if (!TextUtils.isEmpty(text)) {
+                text = et_number_float.getText();
+
                     try {
                         float f = Float.parseFloat(text);
                         Prefs.writeFloat(SAVED_NUMBER_FLOAT, f);
                         updateNumber(f, false);
-                        showToast("Saved");
+                        showToast(SAVED);
                     } catch(IllegalArgumentException e) {
                         HiLog.error(LABEL_LOG, String.format(Locale.ROOT, "%s", e.getMessage()));
+                        showToast(Try_save);
                     }
-                } else {
-                    showToast("trying to save a number with lenght 0");
-                }
+
                 break;
 
             case ResourceTable.Id_bt_save_stringset:
                 HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", et_number.getText()));
 
 
-//                text = et_stringset.getText();
+
                 String t = et_stringset.getText();
                 String array[]=t.split(" ");
                 Set<String> text1 = new HashSet<>(Arrays.asList(array));
@@ -349,12 +334,13 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
                     try {
                         Prefs.putStringSet(SAVED_STRINGSET, text1);
                         updateSet(text1);
-                        showToast("Saved");
+                        showToast(SAVED);
                     } catch(IllegalArgumentException e) {
                         HiLog.error(LABEL_LOG, String.format(Locale.ROOT, "%s", e.getMessage()));
+
                     }
                 } else {
-                    showToast("trying to save a stringset with lenght 0");
+                    showToast("trying to save a stringset with length 0");
                 }
                 break;
 
