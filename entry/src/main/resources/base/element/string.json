@@ -1,0 +1,88 @@
+{
+  "string": [
+    {
+      "name": "entry_MainAbility",
+      "value": "My_App"
+    },
+    {
+      "name": "mainability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "mainability_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "save_text",
+      "value": "Enter the text you want to save and press save button. If you want you can close the app so see if it really saved the text."
+    },
+    {
+      "name": "saved_text",
+      "value": "Saved text: %1$s"
+    },
+    {
+      "name": "saved_bool",
+      "value": "Saved bool"
+    },
+    {
+      "name": "saved_number_int",
+      "value": "Saved number int  : %1$s %2$s"
+    },
+    {
+      "name": "saved_number_long",
+      "value": "Saved number long : %1$s %2$s"
+    },
+    {
+      "name": "saved_number",
+      "value": "Saved number double: %1$s %2$s"
+    },
+    {
+      "name": "saved_number_float",
+      "value": "Saved number float: %1$s %2$s"
+    },
+    {
+      "name": "saved_string_set",
+      "value": "Saved string_set: %1$s"
+    },
+    {
+      "name": "not_found",
+      "value": "no text saved"
+    },
+    {
+      "name": "force_close",
+      "value": "Close"
+    },
+    {
+      "name": "clear",
+      "value": "Clear"
+    },
+    {
+      "name": "save",
+      "value": "Save"
+    },
+    {
+      "name": "hint_text",
+      "value": "input text"
+    },
+    {
+      "name": "hint_stringset",
+      "value": "input stringset"
+    },
+    {
+      "name": "hint_double",
+      "value": "input double value"
+    },
+    {
+      "name": "hint_int",
+      "value": "input int value"
+    },
+    {
+      "name": "hint_float",
+      "value": "input float"
+    },
+    {
+      "name": "hint_long",
+      "value": "input long"
+    }
+  ]
+}
