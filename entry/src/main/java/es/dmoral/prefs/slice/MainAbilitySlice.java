@@ -17,28 +17,26 @@
 
 package es.dmoral.prefs.slice;
 
-import es.dmoral.prefs.MainAbility;
-import es.dmoral.prefs.ResourceTable;
 import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.content.Intent;
-
-import es.dmoral.prefs.Prefs;
-import es.dmoral.prefs.TextUtils;
-
 import ohos.agp.components.*;
 import ohos.agp.window.dialog.ToastDialog;
 import ohos.hiviewdfx.HiLog;
 import ohos.hiviewdfx.HiLogLabel;
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
+import es.dmoral.prefs.MainAbility;
+import es.dmoral.prefs.ResourceTable;
+import es.dmoral.prefs.Prefs;
+import es.dmoral.prefs.TextUtils;
+
 
 public class MainAbilitySlice extends AbilitySlice implements Component.ClickedListener {
 
 
-    private static final HiLogLabel LABEL_LOG = new HiLogLabel(3, 0xD000F00, MainAbility.class.getSimpleName());
+    private static final HiLogLabel LABEL_LOG = new HiLogLabel(3,  0xD000F00,  MainAbility.class.getSimpleName());
 
     public static final String SAVED_TEXT = "saved_text";
     public static final String SAVED_NUMBER = "saved_number";
@@ -56,13 +54,31 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
     private static final String FROM_INSTANCE_STATE = " : from instance state";
 
     private Switch switch1;
-    private TextField et_text, et_number,et_number_int , et_number_long,et_number_float,et_stringset;
-    private Button bt_save_text, bt_save_number, bt_force_close ,bt_save_number_int,bt_save_number_long,bt_save_number_float,bt_save_stringset,bt_clear;
+    private TextField et_text;
+    private TextField et_number;
+    private TextField et_number_int;
+    private TextField et_number_long;
+    private TextField et_number_float;
+    private TextField et_stringset;
 
-    private Text tv_saved_text, tv_saved_number , tv_saved_number_int ,tv_saved_number_long,tv_saved_number_float , tv_saved_stringset;
+    private Button bt_save_text;
+    private Button bt_save_number;
+    private Button bt_force_close;
+    private Button bt_save_number_int;
+    private Button bt_save_number_long;
+    private Button bt_save_number_float;
+    private Button bt_save_stringset;
+    private Button bt_clear;
 
-    String SAVED="SAVED";
-    String Try_save="please enter a valid number";
+    private Text tv_saved_text;
+    private Text tv_saved_number;
+    private Text tv_saved_number_int;
+    private Text tv_saved_number_long;
+    private Text tv_saved_number_float;
+    private Text tv_saved_stringset;
+
+    String SAVED ="SAVED";
+    String Trysave ="please enter a valid number";
 
     @Override
     public void onStart(Intent intent) {
@@ -75,7 +91,7 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
         Prefs prefs = new Prefs(getApplicationContext());
 
         ComponentContainer rootLayout = (ComponentContainer) LayoutScatter.getInstance(this)
-                .parse(ResourceTable.Layout_ability_main, null, false);
+                .parse(ResourceTable.Layout_ability_main,  null,  false);
 
         Boolean bool;
 
@@ -85,10 +101,10 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
 
         et_text = (TextField) rootLayout.findComponentById(ResourceTable.Id_et_text);
         et_number = (TextField) rootLayout.findComponentById(ResourceTable.Id_et_number);
-        et_number_int=(TextField) rootLayout.findComponentById(ResourceTable.Id_et_number_int);
-        et_number_long=(TextField) rootLayout.findComponentById(ResourceTable.Id_et_number_long);
-        et_number_float=(TextField) rootLayout.findComponentById(ResourceTable.Id_et_number_float);
-        et_stringset=(TextField) rootLayout.findComponentById(ResourceTable.Id_et_stringset);
+        et_number_int = (TextField) rootLayout.findComponentById(ResourceTable.Id_et_number_int);
+        et_number_long = (TextField) rootLayout.findComponentById(ResourceTable.Id_et_number_long);
+        et_number_float = (TextField) rootLayout.findComponentById(ResourceTable.Id_et_number_float);
+        et_stringset = (TextField) rootLayout.findComponentById(ResourceTable.Id_et_stringset);
 
 
         bt_save_text = (Button) rootLayout.findComponentById(ResourceTable.Id_bt_save_text);
@@ -99,16 +115,16 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
         bt_save_stringset = (Button) rootLayout.findComponentById(ResourceTable.Id_bt_save_stringset);
 
         bt_force_close = (Button) rootLayout.findComponentById(ResourceTable.Id_bt_force_close);
-        bt_clear=(Button) rootLayout.findComponentById(ResourceTable.Id_bt_clear);
+        bt_clear = (Button) rootLayout.findComponentById(ResourceTable.Id_bt_clear);
 
 
 
         tv_saved_text = (Text) rootLayout.findComponentById(ResourceTable.Id_tv_saved_text);
         tv_saved_number = (Text) rootLayout.findComponentById(ResourceTable.Id_tv_saved_number);
-        tv_saved_number_int =(Text) rootLayout.findComponentById(ResourceTable.Id_tv_saved_number_int);
-        tv_saved_number_long =(Text) rootLayout.findComponentById(ResourceTable.Id_tv_saved_number_long);
-        tv_saved_number_float =(Text) rootLayout.findComponentById(ResourceTable.Id_tv_saved_number_float);
-        tv_saved_stringset =(Text) rootLayout.findComponentById(ResourceTable.Id_tv_saved_string_set);
+        tv_saved_number_int = (Text) rootLayout.findComponentById(ResourceTable.Id_tv_saved_number_int);
+        tv_saved_number_long = (Text) rootLayout.findComponentById(ResourceTable.Id_tv_saved_number_long);
+        tv_saved_number_float = (Text) rootLayout.findComponentById(ResourceTable.Id_tv_saved_number_float);
+        tv_saved_stringset = (Text) rootLayout.findComponentById(ResourceTable.Id_tv_saved_string_set);
 
 
         bt_save_text.setClickedListener(this);//will save string
@@ -122,16 +138,17 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
 
         switch1.setCheckedStateChangedListener(new AbsButton.CheckedStateChangedListener() {
             // Called when the switch status is changed.
+
             @Override
-            public void onCheckedChanged(AbsButton button, boolean isChecked) {
+            public void onCheckedChanged(AbsButton button,  boolean isChecked) {
                 if(isChecked){//if checked
                     //Log.d("name","Logcat is working here");
-                    Prefs.writeBoolean(SAVED_SWITCH,true);
+                    Prefs.writeBoolean(SAVED_SWITCH, true);
                     //Toast.makeText(MainAbilitySlice.this,"Switch is checked",Toast.LENGTH_SHORT).show();
                 }
                 else{
 
-                    Prefs.writeBoolean(SAVED_SWITCH,false);
+                    Prefs.writeBoolean(SAVED_SWITCH, false);
                     //Toast.makeText(MainActivity.this,"Switch is not check",Toast.LENGTH_SHORT).show();
                 }
 
@@ -140,29 +157,29 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
 
         {
 
-            String s = prefs.read(SAVED_TEXT, getString(ResourceTable.String_not_found));
-            HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", s));
+            String s = prefs.read(SAVED_TEXT,  getString(ResourceTable.String_not_found));
+            HiLog.info(LABEL_LOG,  String.format(Locale.ROOT,  "%s", s));
             updateText(s);
 
             //showToast(""+SAVED_NUMBER);
-            double d = Prefs.with(getApplicationContext(),"Custom_name").readDouble(SAVED_NUMBER, -1.0);
-            updateNumber(d, false);
+            double d = Prefs.with(getApplicationContext(),  "Custom_name").readDouble(SAVED_NUMBER,  -1.0);
+            updateNumber(d,  false);
 
             //showToast(SAVED_NUMBER_INT);
 
             int i = Prefs.readInt(SAVED_NUMBER_INT, -1);
-            updateNumber(i, false);
+            updateNumber(i,  false);
 
             long l = Prefs.readLong(SAVED_NUMBER_LONG, -1);
-            updateNumber(l, false);
+            updateNumber(l,  false);
 
             float f = Prefs.readFloat(SAVED_NUMBER_FLOAT, -1.0f);
-            updateNumber(f, false);
+            updateNumber(f,  false);
 
-            bool=Prefs.readBoolean(SAVED_SWITCH,true);
+            bool = Prefs.readBoolean(SAVED_SWITCH,  true);
             switch1.setChecked(bool);
 
-            Set<String> stringset = prefs.getStringSet(SAVED_STRINGSET,new HashSet<>(Arrays.asList("default_string set")));
+            Set<String> stringset = prefs.getStringSet(SAVED_STRINGSET,  new HashSet<>(Arrays.asList("default_string set")));
             updateSet(stringset);
 
 
@@ -174,65 +191,66 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
 
         try {
 
-            String s = prefs.read(SAVED_TEXT, getString(ResourceTable.String_not_found));
-            HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", s));
+            String s = prefs.read(SAVED_TEXT,  getString(ResourceTable.String_not_found));
+            HiLog.info(LABEL_LOG,  String.format(Locale.ROOT,  "%s", s));
             updateText(s);
 
             //showToast(""+SAVED_NUMBER);
-            double d = Prefs.with(getApplicationContext(),"Custom_name").readDouble(SAVED_NUMBER, -1.0);
-            updateNumber(d, false);
+            double d = Prefs.with(getApplicationContext(),  "Custom_name").readDouble(SAVED_NUMBER,  -1.0);
+            updateNumber(d,  false);
 
             //showToast(SAVED_NUMBER_INT);
 
-            int i = Prefs.readInt(SAVED_NUMBER_INT, -1);
-            updateNumber(i, false);
+            int i = Prefs.readInt(SAVED_NUMBER_INT,  -1);
+            updateNumber(i,  false);
 
             long l = Prefs.readLong(SAVED_NUMBER_LONG, -1);
-            updateNumber(l, false);
+            updateNumber(l,  false);
 
             float f = Prefs.readFloat(SAVED_NUMBER_FLOAT, -1.0f);
-            updateNumber(f, false);
+            updateNumber(f,  false);
 
-            bool=Prefs.readBoolean(SAVED_SWITCH,true);
+            bool = Prefs.readBoolean(SAVED_SWITCH,  true);
             switch1.setChecked(bool);
 
-            Set<String> stringset = prefs.getStringSet(SAVED_STRINGSET,new HashSet<>(Arrays.asList("default_string set")));
+            Set<String> stringset = prefs.getStringSet(SAVED_STRINGSET,  new HashSet<>(Arrays.asList("default_string set")));
             updateSet(stringset);
 
 
 
 
         } catch(IllegalArgumentException e) {
-            HiLog.error(LABEL_LOG, String.format(Locale.ROOT, "%s", e.getMessage()));
+            HiLog.error(LABEL_LOG,  String.format(Locale.ROOT,  "%s",  e.getMessage()));
         }
 
         super.setUIContent(rootLayout);
     }
 
     private void updateText(String s) {
-        String text = String.format(getString(ResourceTable.String_saved_text), s);
+        String text = String.format(getString(ResourceTable.String_saved_text),  s);
         tv_saved_text.setText(text);
     }
 
     private void updateNumber(double d, boolean fromInstanceState) {
-        String text = String.format(getString(ResourceTable.String_saved_number), d, fromInstanceState ? FROM_INSTANCE_STATE : "");
+        String text = String.format(getString(ResourceTable.String_saved_number),  d,  fromInstanceState ? FROM_INSTANCE_STATE : "");
         tv_saved_number.setText(text);
     }
 
     private void updateNumber(int d, boolean fromInstanceState) {
-        String text = String.format(getString(ResourceTable.String_saved_number_int), d, fromInstanceState ? FROM_INSTANCE_STATE : "");
+        String text = String.format(getString(ResourceTable.String_saved_number_int),  d,  fromInstanceState ? FROM_INSTANCE_STATE : "");
         tv_saved_number_int.setText(text);
     }
 
     private void updateNumber(long d, boolean fromInstanceState) {
-        String text = String.format(getString(ResourceTable.String_saved_number_long), d, fromInstanceState ? FROM_INSTANCE_STATE : "");
+        String text = String.format(getString(ResourceTable.String_saved_number_long),  d,  fromInstanceState ? FROM_INSTANCE_STATE : "");
         tv_saved_number_long.setText(text);
     }
 
     private void updateNumber(float d, boolean fromInstanceState) {
-        String text = String.format(getString(ResourceTable.String_saved_number_float), d, fromInstanceState ? FROM_INSTANCE_STATE : "");
+        String text = String.format(getString(ResourceTable.String_saved_number_float),  d,  fromInstanceState ? FROM_INSTANCE_STATE : "");
         tv_saved_number_float.setText(text);
     }
+
     private void updateSet(Set<String> String_set) {
         String[] arrayOfString = convert(String_set);
         String text = String.format(getString(ResourceTable.String_saved_string_set),
@@ -249,29 +267,28 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
         switch (component.getId()) {
             case ResourceTable.Id_bt_save_text:
                 String text = et_text.getText();
-                    try {
-                        if (TextUtils.isEmpty(text)) throw new IllegalArgumentException();
-                        HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", Prefs.contains("key_order_string_set")));
-                        Prefs.write(SAVED_TEXT, text);
-                        updateText(text);
-                        showToast(SAVED);
-                    } catch(IllegalArgumentException e) {
-                        HiLog.error(LABEL_LOG, String.format(Locale.ROOT, "%s", e.getMessage()));
-                        showToast(" please enter a valid string ");
+                try {
+                    if (TextUtils.isEmpty(text)) { throw new IllegalArgumentException();}
+                    HiLog.info(LABEL_LOG,  String.format(Locale.ROOT, "%s",  Prefs.contains("key_order_string_set")));
+                    Prefs.write(SAVED_TEXT,  text);
+                    updateText(text);
+                    showToast(SAVED);
+                    } catch (IllegalArgumentException e) {
+                    HiLog.error(LABEL_LOG,  String.format(Locale.ROOT,  "%s", e.getMessage()));
+                    showToast(" please enter a valid string ");
                     }
                 break;
 
 
 
             case ResourceTable.Id_bt_save_number:
-                HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", et_number.getText()));
+                HiLog.info(LABEL_LOG, String.format(Locale.ROOT,  "%s",  et_number.getText()));
                 text = et_number.getText();
 
-
-                        double d = Double.parseDouble(text);
-                        Prefs.writeDouble(SAVED_NUMBER, d);
-                        updateNumber(d, false);
-                        showToast(SAVED);
+                double d = Double.parseDouble(text);
+                Prefs.writeDouble(SAVED_NUMBER,  d);
+                updateNumber(d,  false);
+                showToast(SAVED);
 
 
                 break;
@@ -279,64 +296,64 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
 
 
             case ResourceTable.Id_bt_save_number_int:
-                HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", et_number.getText()));
+                HiLog.info(LABEL_LOG,  String.format(Locale.ROOT,  "%s",  et_number.getText()));
                 text = et_number_int.getText();
 
-                        int i = Integer.parseInt(text);
-                        Prefs.writeInt(SAVED_NUMBER_INT, i);
-                        updateNumber(i, false);
-                        showToast(SAVED);
+                int i = Integer.parseInt(text);
+                Prefs.writeInt(SAVED_NUMBER_INT,  i);
+                updateNumber(i,  false);
+                showToast(SAVED);
 
                 break;
 
             case ResourceTable.Id_bt_save_number_long:
-                HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", et_number.getText()));
+                HiLog.info(LABEL_LOG,  String.format(Locale.ROOT,  "%s",  et_number.getText()));
                 text = et_number_long.getText();
 
-                    try {
+                try {
                         long l = Long.parseLong(text);
-                        Prefs.writeLong(SAVED_NUMBER_LONG, l);
-                        updateNumber(l, false);
+                        Prefs.writeLong(SAVED_NUMBER_LONG,  l);
+                        updateNumber(l,  false);
                         showToast(SAVED);
-                    } catch(IllegalArgumentException e) {
-                        HiLog.error(LABEL_LOG, String.format(Locale.ROOT, "%s", e.getMessage()));
-                        showToast(Try_save);
+                    } catch (IllegalArgumentException e) {
+                        HiLog.error(LABEL_LOG,  String.format(Locale.ROOT,  "%s",  e.getMessage()));
+                        showToast(Trysave);
                     }
                 break;
 
 
             case ResourceTable.Id_bt_save_number_float:
-                HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", et_number.getText()));
+                HiLog.info(LABEL_LOG, String.format(Locale.ROOT,  "%s",  et_number.getText()));
                 text = et_number_float.getText();
 
-                    try {
+                try {
                         float f = Float.parseFloat(text);
-                        Prefs.writeFloat(SAVED_NUMBER_FLOAT, f);
-                        updateNumber(f, false);
+                        Prefs.writeFloat(SAVED_NUMBER_FLOAT,  f);
+                        updateNumber(f,  false);
                         showToast(SAVED);
-                    } catch(IllegalArgumentException e) {
-                        HiLog.error(LABEL_LOG, String.format(Locale.ROOT, "%s", e.getMessage()));
-                        showToast(Try_save);
+                    } catch (IllegalArgumentException e) {
+                        HiLog.error(LABEL_LOG,  String.format(Locale.ROOT,  "%s",  e.getMessage()));
+                        showToast(Trysave);
                     }
 
                 break;
 
             case ResourceTable.Id_bt_save_stringset:
-                HiLog.info(LABEL_LOG, String.format(Locale.ROOT, "%s", et_number.getText()));
+                HiLog.info(LABEL_LOG, String.format(Locale.ROOT,  "%s",  et_number.getText()));
 
 
 
                 String t = et_stringset.getText();
-                String array[]=t.split(" ");
+                String array[] = t.split(" ");
                 Set<String> text1 = new HashSet<>(Arrays.asList(array));
 
                 if (!TextUtils.isEmpty(t)) {
                     try {
-                        Prefs.putStringSet(SAVED_STRINGSET, text1);
+                        Prefs.putStringSet(SAVED_STRINGSET,  text1);
                         updateSet(text1);
                         showToast(SAVED);
-                    } catch(IllegalArgumentException e) {
-                        HiLog.error(LABEL_LOG, String.format(Locale.ROOT, "%s", e.getMessage()));
+                    } catch (IllegalArgumentException e) {
+                        HiLog.error(LABEL_LOG,  String.format(Locale.ROOT,  "%s",  e.getMessage()));
 
                     }
                 } else {
@@ -382,9 +399,11 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
 //        super.onForeground(intent);
 //    }
 
-
+/**
+ * convert method
+ * */
     public static String[] convert(Set<String> setOfString)
-    {
+        {
 
         // Create String[] of size of setOfString
         String[] arrayOfString = new String[setOfString.size()];
@@ -392,11 +411,12 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
         // Copy elements from set to string array
         // using advanced for loop
         int index = 0;
-        for (String str : setOfString)
+        for (String str : setOfString) {
             arrayOfString[index++] = str;
+        }
 
         // return the formed String[]
         return arrayOfString;
-    }
+        }
 
 }

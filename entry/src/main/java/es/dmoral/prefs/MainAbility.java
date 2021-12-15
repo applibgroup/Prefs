@@ -16,10 +16,14 @@
 
 package es.dmoral.prefs;
 
-import es.dmoral.prefs.slice.MainAbilitySlice;
+
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
+import es.dmoral.prefs.slice.MainAbilitySlice;
 
+/**
+* MainAbility
+ */
 public class MainAbility extends Ability {
     @Override
     public void onStart(Intent intent) {
